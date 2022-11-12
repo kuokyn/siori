@@ -12,17 +12,12 @@ import javax.persistence.*;
 public class UserType {
 
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "name")
+    private String name;
 
     public UserType(String name) {
         this.name = name;
     }
-
-    @Column(name = "name")
-    private String name;
-
     public UserType() {
 
     }

@@ -40,6 +40,6 @@ public class MainController {
 
     @GetMapping("/universities")
     public String universities() {
-        return "universities";
+        return "universitiesCommonList";
     }
 }

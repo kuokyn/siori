@@ -6,14 +6,15 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private final String[] routesForUser = {};
-    private final String[] routesForAdmin = {"/company"};
+    private final String[] routesForUser = {"/profile"};
+    private final String[] routesForAdmin = {};
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -46,6 +47,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthenticationManager customAuthenticationManager() throws Exception {
         return authenticationManager();
+    }
+
+    @Bean
+    @Override
+    public UserDetailsService userDetailsService() {
+        return username -> {
+            throw new UnsupportedOperationException(username);
+        };
     }
 
 

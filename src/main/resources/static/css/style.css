@@ -24,7 +24,7 @@ html {
     font-size: 10px;
     font-family: 'Manrope', sans-serif;
     scroll-behavior: smooth;
-    background-image: linear-gradient(white, #5B6697);
+    /*background-image: linear-gradient(white, #5B6697);*/
 }
 
 body {

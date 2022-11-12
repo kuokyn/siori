@@ -16,23 +16,22 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "user")
-public class User  implements UserDetails{
+public class User implements UserDetails {
 
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
     private String surname;
+
+    @Id
     @Column(name = "phone")
     private String phone;
     @Column(name = "password")
     private String password;
 
     @OneToOne
-    @JoinColumn(name = "user_type_id")
+    @JoinColumn(name = "user_type")
     private UserType userType;
     @Column(name = "email")
     private String email;

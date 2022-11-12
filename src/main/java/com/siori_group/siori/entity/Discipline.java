@@ -19,11 +19,8 @@ public class Discipline {
     @Column(name="title")
     private String title;
 
-    @Column(name="score")
-    private Integer score;
 
-    public Discipline(String title, Integer score) {
-        this.score = score;
+    public Discipline(String title) {
         this.title = title;
     }
 
