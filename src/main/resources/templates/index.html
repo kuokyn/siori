@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<!-- HEADER -->
+<div th:replace="shared/header :: header('index')"/>
+
+<div id="hero" class="hero">
+    <div class="container">
+        <div class="hero__text-box">
+            <h1 class="hero__text">
+                <span class="hero__text-top">Поступление на целевое обучение</span>
+            </h1>
+            <a class="btn btn-orange" th:href="@{/userForm}">
+                Написать заявление
+            </a>
+        </div>
+    </div>
+</div>
+<!--</header>-->
+<main>
+    <!-- ВУЗЫ -->
+    <section class="info">
+        <div class="container">
+            <h2>Высшие учебные заведения</h2>
+            <div class="row">
+                <div class="col-2 image-group">
+                    <img th:src="@{/img/blog-list-img-1.jpg}" alt="image">
+                </div>
+                <div class="col-2 image-group">
+                    <img th:src="@{/img/blog-list-img-1.jpg}" alt="image">
+                </div>
+                <div class="col-2 image-group">
+                    <img th:src="@{/img/blog-list-img-1.jpg}" alt="image">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 image-group">
+                    <img th:src="@{/img/blog-list-img-1.jpg}" alt="image">
+                </div>
+                <div class="col-2 image-group">
+                    <img th:src="@{/img/blog-list-img-1.jpg}" alt="image">
+                </div>
+                <div class="col-2 image-group">
+                    <img th:src="@{/img/blog-list-img-1.jpg}" alt="image">
+                </div>
+            </div>
+            <div>
+                <a class="btn btn-orange" th:href="@{/universities}">
+                    Смотреть все
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Заказчики -->
+    <section class="employers">
+        <div class="container">
+            <div class="row">
+                <div class="col-2 padding-right">
+                    <div class="row">
+                        <img th:src="@{/img/rooms.jpg}" alt="image">
+                        <img th:src="@{/img/rooms.jpg}" alt="image">
+                    </div>
+                    <div class="row">
+                        <img th:src="@{/img/rooms.jpg}" alt="image">
+                        <img th:src="@{/img/rooms.jpg}" alt="image">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="text-box">
+                        <h2 class="headline">Заказчики</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Architecto enim mollitia
+                            dolorum
+                            necessitatibus vero sunt deleniti minus vel, non quasi?</p>
+                        <div>
+                            <a class="btn btn-orange" th:href="@{/universities}">
+                                Смотреть все
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Работодатели -->
+    <section class="restaurant">
+        <div class="container">
+            <h2 style="text-align: center">Более 100 работодателей</h2>
+            <div class="row column-reverse">
+                <div class="text-box">
+                    <img th:src="@{/img/rooms.jpg}" alt="image">
+                    <img th:src="@{/img/rooms.jpg}" alt="image">
+                    <img th:src="@{/img/rooms.jpg}" alt="image">
+                    <img th:src="@{/img/rooms.jpg}" alt="image">
+                    <div>
+                        <a class="btn btn-orange" th:href="@{/universities}">
+                            Смотреть все
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 style="text-align: center">Часто задаваемые вопросы</h2>
+            <div class="row">
+                <div class="col-2 padding-right">
+                    <ul>
+                        <li>Вопрос 1</li>
+                        <li>Вопрос 2</li>
+                        <li>Вопрос 3</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-2 padding-right">
+                        <ul>
+                            <li>Вопрос 4</li>
+                            <li>Вопрос 5</li>
+                            <li>Вопрос 6</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<div th:replace="shared/footer :: footer('index')"/>
+</body>
+</html>

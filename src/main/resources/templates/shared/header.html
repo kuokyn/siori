@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+  <div th:fragment="header-css">
+    <link href="welcome">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link type="text/css" th:href="@{/css/style.css}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
+  </div>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="container">
+  <nav th:fragment="header(pageName)" id="header" class="navbar" style="margin: 0 auto;">
+    <!--        <a class="logo" href="/">лого</a>-->
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="open"></i>
+      <i class="fas fa-times" id="close"></i>
+    </label>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a class="nav-link"
+           th:href="@{/}">
+          ЛОГОТИП
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           th:href="@{/}">
+          Главная
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           th:href="@{/universities}">
+          Вузы
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           th:href="@{/employers}">
+          Работодатели
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           th:href="@{/clients}">
+          Заказчики
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link"
+           th:href="@{/enrollees}">
+          Абитуриентам
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link"
+           th:href="@{/students}">
+          Студентам
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           style="padding-right: 20px;"
+           th:href="@{/registration}">
+          Регистрация
+        </a>
+      </li>
+    </ul>
+    <div>
+      <a class="btn btn-orange" href="/login">
+        Вход
+      </a>
+    </div>
+  </nav>
+</div>
+</body>
+</html>
