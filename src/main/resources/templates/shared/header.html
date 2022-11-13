@@ -22,25 +22,11 @@
 <!-- HEADER -->
 <div class="container">
   <nav th:fragment="header(pageName)" id="header" class="navbar" style="margin: 0 auto;">
-    <!--        <a class="logo" href="/">лого</a>-->
-    <input type="checkbox" id="check">
-    <label for="check">
-      <i class="fas fa-bars" id="open"></i>
-      <i class="fas fa-times" id="close"></i>
-    </label>
+    <a class="nav-link"
+       th:href="@{/}">
+      <img th:src="@{/img/logo_navmenu.svg}" alt="">
+    </a>
     <ul class="nav-list">
-      <li class="nav-item">
-        <a class="nav-link"
-           th:href="@{/}">
-          LYNX
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"
-           th:href="@{/}">
-          Главная
-        </a>
-      </li>
       <li class="nav-item">
         <a class="nav-link"
            th:href="@{/universities}">
@@ -49,7 +35,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link"
-           th:href="@{/employers}">
+           th:href="@{/companies}">
           Работодатели
         </a>
       </li>
@@ -61,19 +47,19 @@
       </li>
       <li class="nav-item" >
         <a class="nav-link"
-           th:href="@{/enrollees}">
-          Абитуриентам
+           th:href="@{/courses}">
+          Программы обучения
         </a>
       </li>
       <li class="nav-item" >
         <a class="nav-link"
-           th:href="@{/students}">
-          Студентам
+           th:href="@{/about}">
+          О нас
         </a>
       </li>
     </ul>
     <div>
-      <a class="btn btn-orange" href="/login" style="margin-left: 10px; height: 15px;align-items: center;display: flex; font-size: 10px;">
+      <a class="btn btn-orange" href="/loginAsStudent" style="margin-left: 10px; height: 15px;align-items: center;display: flex; font-size: 10px;">
         Вход
       </a>
     </div>

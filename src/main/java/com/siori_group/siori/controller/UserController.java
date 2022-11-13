@@ -19,25 +19,26 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/registration")
-    public String registration(Model model) {
+    @GetMapping("/registrationAsStudent")
+    public String registrationAsStudent(Model model) {
         model.addAttribute("userForm", new User());
-        return "registration";
+        return "registration_as_student";
     }
 
-    @PostMapping("/registration")
-    public String registration(@ModelAttribute("userForm") User userForm) {
+    @PostMapping("/registrationAsStudent")
+    public String registrationAsStudent(@ModelAttribute("userForm") User userForm) {
         userRepository.save(userForm);
         return "index";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
+    @GetMapping("/loginAsStudent")
+    public String loginAsStudent() {
+        return "login_as_student";
     }
 
-    @PostMapping("/login")
-    public String login(Model model, String error, String logout) {
+
+    @PostMapping("/loginAsStudent")
+    public String loginAsStudent(Model model, String error, String logout) {
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
 
@@ -46,4 +47,18 @@ public class UserController {
         return "index";
     }
 
+    @GetMapping("/profile")
+    public String showUserProfile(Model model) {
+        return "profileUser";
+    }
+
+    @GetMapping("/profile/clients")
+    public String showUserClients(Model model) {
+        return "profileUserUniversity";
+    }
+
+    @GetMapping("/profile/courses")
+    public String showUserCourses(Model model) {
+        return "profileUserCourses";
+    }
 }

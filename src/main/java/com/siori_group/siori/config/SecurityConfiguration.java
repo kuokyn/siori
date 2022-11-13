@@ -13,8 +13,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private final String[] routesForUser = {"/profile"};
+    private final String[] routesForUser = {};
     private final String[] routesForAdmin = {};
+
+//    private final String[] routesForCompany = {"/profileCompany"};
+
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -29,6 +32,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(routesForUser)
                 .hasRole("USER")
+//                .antMatchers()
+//                .hasRole("COMPANY")
                 .antMatchers(routesForAdmin)
                 .hasRole("ADMIN")
                 .antMatchers("/**").permitAll()

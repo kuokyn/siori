@@ -12,34 +12,5 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/company")
-    public String company() {
-        return "profileCompany";
-    }
 
-
-    @GetMapping("/employers")
-    public String employers() {
-        return "employersCommonList";
-    }
-
-    @GetMapping("/clients")
-    public String clients() {
-        return "clientsCommonList";
-    }
-
-    @GetMapping("/enrollees")
-    public String enrollees() {
-        return "forEnrollees";
-    }
-
-    @GetMapping("/students")
-    public String students() {
-        return "forStudents";
-    }
-
-    @GetMapping("/universities")
-    public String universities() {
-        return "universitiesCommonList";
-    }
 }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="shared/header :: header('course')"/>
+<main>
+    <section>
+        <div class="title anim-items">
+            <div class="main-title">
+                Программы обучения
+            </div>
+        </div>
+    </section>
+    <!--<section>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                <tr class="table-names">
+                    <th>Код программы</th>
+                    <th>Квалификация </th>
+                    <th>Количесто мест</th>
+                    <th>Описание программы</th>
+                    <th>Минимальный балл</th>
+                    <th>Проходной балл в прошлом году</th>
+                    <th>Сроки сдачи</th>
+                    <th>Критерии отбора</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${course.code}">
+                    </td>
+                    <td th:text="${course.qualification}">
+                    </td>
+                    <td th:text="${course.places}">
+                    </td>
+                    <td th:text="${course.description}">
+                    </td>
+                    <td th:text="${course.min_score}">
+                    </td>
+                    <td th:text="${course.previous_score}">
+                    </td>
+                    <td th:text="${course.start_date} + ' - ' + ${course.end_date}">
+                    </td>
+                    <td th:text="${criteria}">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>-->
+    <section>
+        <div th:if="${courseListPage.hasContent() eq true}">
+            Доступно [[${courseListPage.totalElements}]] университетов
+        </div>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                <tr class="table-names">
+                    <th>Программа обуения</th>
+                    <th>Почта</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="course : ${courseListPage.content}">
+                    <td>
+                        <span> [[${course.code}]]</span>
+                    </td>
+                    <td>
+                        <span> [[${course.places}]]</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div th:replace="shared/pagination :: pager(courseCommonList.html, ${courseListPage})"></div>
+        </div>
+    </section>
+</main>
+<div th:replace="shared/footer :: footer('course')"/>
+</body>
+</html>

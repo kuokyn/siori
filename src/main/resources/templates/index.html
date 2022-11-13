@@ -15,24 +15,24 @@
 
 <div id="hero" class="hero">
     <div class="container">
-        <div class="hero__text-box">
-            <div class="row">
-                    <h1 class="hero__text">
-                        <span class="hero__text-top">Поступи на целевое обучение</span>
-                    </h1>
-
-<!--                <div class="col-2 padding-right">-->
-<!--                    <img th:src="@{/img/hero.png}" alt="image" style="max-width: 412px;max-height: 412px;">-->
-
-<!--                </div>-->
+        <div class="row">
+            <div class="hero__text-box col-2" >
+                <h1 class="hero__text">
+                    <span class="hero__text-top">Поступи на целевое обучение</span>
+                </h1>
+                <p style="padding-bottom: 50px;">Прием на целевое обучение – это поступление в вуз на бюджет по направлению от государственного ведомства
+                    или предприятия. Условия, заключенные предприятием и студентом, могут быть разными - некоторые компании
+                    предлагают студенту обязательную работу после обучения, выплату стипендий и предоставление
+                    общежитий.</p>
+                <a class="btn btn-orange" th:href="@{/userForm}">
+                    Написать заявление
+                </a>
             </div>
-            <p>Прием на целевое обучение – это поступление в вуз на бюджет по направлению от государственного ведомства или предприятия. Условия, заключенные предприятием и студентом, могут быть разными - некоторые компании предлагают студенту обязательную работу после обучения, выплату стипендий и предоставление общежитий.</p>
-            <a class="btn btn-orange" th:href="@{/userForm}">
-            Написать заявление
-        </a>
-
-
+            <div class="col-2" style=" left: 50%; top: 10%; float: right;position: absolute;">
+                <img th:src="@{/img/hero.svg}" alt="image" style="float: right;position: absolute;">
+            </div>
         </div>
+
     </div>
 </div>
 <!--</header>-->

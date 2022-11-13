@@ -22,38 +22,36 @@
 <!-- FOOTER SECTION -->
 <footer th:fragment="footer(pageName)">
     <div class="container">
-        <div class="back-to-top">
-            <a href="#hero"><i class="fas fa-chevron-up"></i></a>
+        <div>
+            <div class="back-to-top">
+                <p><a href="#hero"><i class="fas fa-chevron-up"></i></a></p>
+            </div>
+            <div class="footer__content row">
+                <div class="col-3">
+                    <a class="nav-link"
+                       th:href="@{/}">
+                        <img th:src="@{/img/logo_white.svg}" alt="room">
+                    </a></p>
+                </div>
+                <div class="col-3">
+                    <p><a href="#">О нас</a></p>
+                    <p><a href="#">Рекламодателям</a></p>
+                    <p><a href="#">Родителям и ученикам</a></p>
+                </div>
+                <div class="col-3">
+                    <p><a href="#">Вузам</a></p>
+                    <p><a href="#">Добавить ВУЗ</a></p>
+                    <p><a href="#">Абитуриентам и школьникам</a></p>
+                </div>
+                <div class="col-3">
+                    <p><a href="#">Обратная связь</a></p>
+                    <p><a href="#">О создателях</a></p>
+                    <p><a href="#">Документы и соглашения</a></p>
+                </div>
+            </div>
         </div>
-        <div class="footer__content row">
-            <div class="col-3">
-                <h4>О нас</h4>
-            </div>
-            <div class="col-3">
-                <h4>Наши соц.сети</h4>
-                <ul class="social-icons">
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-tripadvisor"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="footer__content row" style="display: flex;justify-content: center">
+            <span class="copyrights">Copyright 2022. LYNX</span>
         </div>
     </div>
 </footer>

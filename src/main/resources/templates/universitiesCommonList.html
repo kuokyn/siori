@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<!--<div th:replace="shared/header :: header('universitiesCommonList')"/>-->
+<div th:replace="shared/header :: header('universitiesCommonList')"/>
+<main>
+    <section>
+        <div class="title anim-items">
+            <div class="main-title">
+                Университеты
+            </div>
+        </div>
+    </section>
+    <section>
+        <div th:if="${universityListPage.hasContent() eq true}">
+            Доступно [[${universityListPage.totalElements}]] университетов
+        </div>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                <tr class="table-names">
+                    <th>Работодатель</th>
+                    <th>Почта</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="university : ${universityListPage.content}">
+                    <td>
+                        <span> [[${university.long_name}]]</span>
+                    </td>
+                    <td>
+                        <span> [[${university.short_name}]]</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div th:replace="shared/pagination :: pager(universityCommonList.html, ${universityListPage})"></div>
+        </div>
+    </section>
+</main>
 
+<div th:replace="shared/footer :: footer('universitiesCommonList')"/>
 </body>
 </html>

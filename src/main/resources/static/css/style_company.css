@@ -31,17 +31,12 @@
   /*--filter-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
+
 
 body {
   overflow: hidden;
-  font-family: "Poppins", sans-serif;
-  background-color: var(--app-bg);
+  font-family: "Manrope", sans-serif;
+  background-image: linear-gradient(white, #5B6697);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -61,7 +56,7 @@ body {
 
 .sidebar {
   flex-basis: 200px;
-  max-width: 200px;
+  min-width: 400px;
   flex-shrink: 0;
   background-color: var(--sidebar);
   display: flex;
@@ -88,7 +83,7 @@ body {
   padding: 10px 16px;
   color: var(--sidebar-link);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 24px;
 }
 .sidebar-list-item svg {

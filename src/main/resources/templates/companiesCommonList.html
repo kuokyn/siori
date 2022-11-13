@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="shared/header :: header('index')"/>
+<main>
+    <section>
+        <div class="title anim-items">
+            <div class="main-title">
+                Работодатели
+            </div>
+        </div>
+    </section>
+    <section>
+        <div th:if="${companyListPage.hasContent() eq true}">
+            Доступно [[${companyListPage.totalElements}]] работодателей
+        </div>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                <tr class="table-names">
+                    <th>Работодатель</th>
+                    <th>Почта</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="company : ${companyListPage.content}">
+                    <td>
+                        <span> [[${company.name}]]</span>
+                    </td>
+                    <td>
+                        <span> [[${company.email}]]</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div th:replace="shared/pagination :: pager(companyCommonList.html, ${companyListPage})"></div>
+        </div>
+    </section>
+</main>
+<div th:replace="shared/footer :: footer('companiesCommonList')"/>
+</body>
+</html>

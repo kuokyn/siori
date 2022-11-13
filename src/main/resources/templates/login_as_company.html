@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="utf-8">
+    <title>Авторизация</title>
+    <div th:replace="shared/header :: header-css"/>
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{/css/style.css}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: 0;
+        }
+
+        .container {
+            width: 1040px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;*/
+            justify-content: center;
+        }
+
+        /*section {
+            margin-top: 75px;
+            margin-bottom: 150px;
+        }*/
+
+        .form-wrap a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .form-wrap a:hover {
+            text-decoration: underline;
+        }
+
+        .form-wrap {
+            background: white;
+            padding: 10px 20px;
+            /*border-radius: 10px;*/
+            width: 512px;
+            height: 512px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.1), inset 0px 4px 10px rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            margin: 15px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+        }
+
+        .h1-form {
+            width: 100%;
+            padding: 5px;
+        }
+
+        h1.form {
+            text-align: center;
+            font-size: 28px;
+            color: #4a455d;
+        }
+
+        .form-wrap input {
+            height: 40px;
+            width: 100%;
+            border: 1px solid #d3d3d3;
+            border-bottom: 2px solid #d3d3d3;
+            outline: none;
+            border-radius: 5px;
+            padding: 0 45px;
+        }
+
+        .form-wrap input:is(:focus) {
+            border: 1px solid #4db2ec;
+        }
+
+        .input-field {
+            position: relative;
+        }
+
+        form .field {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        form .field.shake {
+            animation: shake 0.2s linear;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                margin-left: 0;
+            }
+            20%, 80% {
+                margin-left: -7px;
+            }
+            40%, 60% {
+                margin-left: 7px;
+            }
+        }
+
+        form .field i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .the-icon {
+            left: 15px;
+            color: #d3d3d3;
+        }
+
+        .error-icon {
+            right: 15px;
+            color: #ff5252;
+        }
+
+        .error-txt {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #e22f2f;
+        }
+
+        i.error, div.error {
+            display: none;
+        }
+
+        #form2 .field.active i.error,
+        #form2 .field.active div.error {
+            display: block;
+        }
+
+        form #login {
+            border: none;
+            background: #F5891C;
+            color: white;
+            height: 45px;
+            cursor: pointer;
+        }
+
+        .pass-link {
+            font-size: 13px;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #4a455d;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="shared/header :: header('login')"/>
+<div class="container text-center">
+    <section class="task6">
+        <div class="form-wrap">
+            <div class="h1-form">
+                <h1 class="form">Авторизация</h1>
+            </div>
+            <form id="form2" class="form-signin" method="post" action="/login">
+                <div class="field email">
+                    <div class="input-field">
+                        <input type="text" id="username" name="username" class="form-control" placeholder="ID"
+                               required>
+                        <i class="the-icon icon-email fas fa-envelope"></i>
+                        <i class="error error-icon fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="error error-txt">Это поле не может быть пустым</div>
+                </div>
+                <div class="field password">
+                    <div class="input-field">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Пароль"
+                               required>
+                        <i class="the-icon icon-pass fas fa-lock"></i>
+                        <i class="error error-icon fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="error error-txt">Это поле не может быть пустым</div>
+                </div>
+                <input id="login" class="field" type="submit" value="Войти">
+            </form>
+            <div class="signup-link"><a th:href="@{/registrationAsCompany}"> Зарегистрироваться как работодатель</a></div>
+            <div class="signup-link">или войдите как<a th:href="@{/registrationAsStudent}"> Студент</a></div>
+        </div>
+    </section>
+</div>
+</body>
